@@ -1,0 +1,8 @@
+
+> myreact@1.0.0 start C:\Users\Karam\Desktop\myReact
+> npm run build
+
+
+> myreact@1.0.0 build C:\Users\Karam\Desktop\myReact
+> webpack -d && cpy src/index.html dist/index.html && webpack-dev-server --content-base src/ --inline
+
