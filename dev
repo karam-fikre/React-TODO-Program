@@ -1,8 +1,8 @@
 
-> myreact@1.0.0 start C:\Users\Karam\Desktop\myReact
+> myreact@1.0.0 start C:\Users\Karam\Desktop\React-Todo-App\React-TODO-Program
 > npm run build
 
 
-> myreact@1.0.0 build C:\Users\Karam\Desktop\myReact
+> myreact@1.0.0 build C:\Users\Karam\Desktop\React-Todo-App\React-TODO-Program
 > webpack -d && cpy src/index.html dist/index.html && webpack-dev-server --content-base src/ --inline
 
