@@ -1,9 +1,13 @@
+import './stylesheets/main.css';
+
 import React from "react";
 import {render} from "react-dom";
 import App from "./components/app";
+
 main();
+
 function main(){
-  var app = document.createElement('div');
-  document.body.appendChild(app);
+  var div = document.createElement('div');
+  document.body.appendChild(div);
 }
-render(<App/>,window.document.getElementById("app"));
+render(<App/>,document.getElementById("app"));
