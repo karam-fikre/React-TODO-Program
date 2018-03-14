@@ -11,9 +11,9 @@ export default class App extends React.Component{
     this.state={
       title:'',
       todos: [
-                {title:'Test1',done:false,id:1},
-                {title:'Test2',done:false,id:2},
-                {title:'Test3',done:false,id:3}
+                {title:'Task 1 ',done:false,id:1},
+                {title:'Task 2',done:false,id:2},
+                {title:'Task 3',done:false,id:3}
               ]
     };
   }
@@ -52,7 +52,8 @@ handleClearCompleted(event){
     return <div>
                   <h1> TODO </h1>
               <form onSubmit={this.handleSubmit.bind(this)}>
-                  <input type="text" onChange={(event) => this.handleChange(event)} value={this.state.title}/>
+                  <input type="text" placeholder="Enter a task" onChange={(event) => this.handleChange(event)} value={this.state.title}/>
+                  <button className="add">Add</button>
               </form>
 
 
@@ -62,10 +63,10 @@ handleClearCompleted(event){
               todos={this.state.todos}/>
 
               <footer>
-              All: {this.state.todos.length}|
-              Completed: {this.state.todos.filter((todo)=>{return todo.done}).length}|
-              Pending: {this.state.todos.filter((todo)=>{return !todo.done}).length}|
-              <a href="#" className="clear-completed" onClick={this.handleClearCompleted.bind(this)}>Clean Completed</a>
+              All: <span className="todo-count"> {this.state.todos.length}</span> |
+              Completed:<span className="todo-count"> {this.state.todos.filter((todo)=>{return todo.done}).length}</span> |
+              Pending: <span className="todo-count"> {this.state.todos.filter((todo)=>{return !todo.done}).length}</span> |
+              <a  className="clear-completed" onClick={this.handleClearCompleted.bind(this)}>Clean Completed</a>
              </footer>
 
           </div>

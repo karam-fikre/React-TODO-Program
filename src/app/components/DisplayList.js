@@ -1,12 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import FlipMove from "react-flip-move";
+
 import DisplayItem from './DisplayItem'
 
 export default class DisplayList extends React.Component{
 
   render(){
-    return <div className="todo-app"><ul id="todo-list">
+    return  <ul id="todo-list">
+    <FlipMove staggerDurationBy="30" duration={500} enterAnimation="accordionVertical">
     { this.props.todos.map((todo,i)=>{
       return <section id="main" key={todo.id}>
               <DisplayItem
@@ -15,9 +18,10 @@ export default class DisplayList extends React.Component{
                 handleDelete={this.props.handleDelete.bind(null,todo.id)}/>
               </section>
     }) }
-
+ </FlipMove>
     </ul>
-    </div>
+
+
   }
 }
 DisplayList.propTypes={

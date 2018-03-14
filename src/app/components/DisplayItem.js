@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 export default class DisplayItem extends React.Component{
 constructor(){
   super();
-  this.state={editing:false};
+  this.state={editing:false,changedText:''};
 }
 
 componentDidMount(){
@@ -38,23 +38,25 @@ this.setState({changedText:_changedText});
     }else{
       editStyle.display='none';
     }
-    return  <li id="todo-list" className={todo.done ? 'done' : ''}>
+    return  <li id="items" className={todo.done ? 'done' : ''}>
     <div style={viewStyle} onDoubleClick={this.handleEditing.bind(this)}>
+       <label>{this.state.changedText}
        <input
        checked={todo.done}
        onChange={this.props.handleDone.bind(null,todo.id)}
        type="checkbox"/>
+<span className="checkmark"></span>
 
-        <label>
-        {this.state.changedText}
+
         </label>
 
-       <a href="#" className="destroy" onClick={this.props.handleDelete.bind(null,todo.id)}>
-         [x]
-       </a>
+
+       <a href="#" className="destroy glyphicon glyphicon-trash" onClick={this.props.handleDelete.bind(null,todo.id)}/>
+
       </div>
 
       <input type="text"
+      className="editing"
       onKeyDown={this.handleEditingDone.bind(this)}
       onChange={this.handleEditingChange.bind(this)}
       style={editStyle} value={todo.title}
