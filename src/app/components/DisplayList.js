@@ -6,7 +6,7 @@ import DisplayItem from './DisplayItem'
 export default class DisplayList extends React.Component{
 
   render(){
-    return <ul id="todo-list">
+    return <div className="todo-app"><ul id="todo-list">
     { this.props.todos.map((todo,i)=>{
       return <section id="main" key={todo.id}>
               <DisplayItem
@@ -17,6 +17,7 @@ export default class DisplayList extends React.Component{
     }) }
 
     </ul>
+    </div>
   }
 }
 DisplayList.propTypes={
